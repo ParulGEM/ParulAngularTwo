@@ -16,10 +16,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./create.component.css'],
 })
 export class CreateComponent implements AfterViewInit {
-  // technologies: string[] = ['C', 'C++', 'Java', 'Python', 'JavaScript'];
-  // formData: any; // Property to store form data
-  // selectedOrderIds:any=[];
-  ngAfterViewInit(): void {
+   ngAfterViewInit(): void {
     setTimeout(() => {
       this.spinner.hide();
     }, 500);
@@ -36,20 +33,8 @@ export class CreateComponent implements AfterViewInit {
     private formBuilder: FormBuilder,
   ) {
     this.userServiceData = userdata;
-    // this.registerForm = this.fb.group({
-    //   checkArray: this.fb.array([]),
-    // });
-
     this.spinner.show();
   }
-  // ngOnInit(): void {
-  //   this.technologies.forEach(() => (this.registerForm.get('technology') as FormArray).push(new FormControl(false)));
-  // }
-  // getControls(){
-
-  //   return (this.registerForm.get('technology') as FormArray).controls
-  // }
-
   registerForm = new FormGroup({
     name: new FormControl(null, [
       Validators.required,
@@ -70,21 +55,6 @@ export class CreateComponent implements AfterViewInit {
     ]),
     category: new FormControl(null, Validators.required),
     technologies:new FormArray([]),
-    // technology: this.formBuilder.array([]),
-    // tech: new FormGroup({
-    //   c: new FormControl(false),
-    //   cpp: new FormControl(false),
-    //   java: new FormControl(false),
-    //   python: new FormControl(false),
-    //   javascript: new FormControl(false)
-    // }),
-    //tech: new FormGroup({}),
-    //FormControl(null,Validators.required),
-    // techC: new FormControl(false),
-    // techCpp: new FormControl(false),
-    // techJava: new FormControl(false),
-    // techPython: new FormControl(false),
-    //techJavascript: new FormControl(false),
     profilePicture: new FormControl('', Validators.required)
   });
 
@@ -141,40 +111,10 @@ export class CreateComponent implements AfterViewInit {
     }
   }
 
-  // get techC() {
-  //   return this.registerForm.get('techC');
-  // }
-  // get techCpp() {
-  //   return this.registerForm.get('techCpp');
-  // }
-  // get techJava() {
-  //   return this.registerForm.get('techJava');
-  // }
-  // get techPython() {
-  //   return this.registerForm.get('techPython');
-  // }
-  // get techJavascript() {
-  //   return this.registerForm.get('techJavascript');
-  // }
   get profilePicture() {
     return this.registerForm.get('profilePicture');
   }
   preview(event: any) {
-    // this.userServiceData.showAlert('error', 'ERROR : Invalid Form');
-    // const Technology: string = `${this.techCpp?.value ? 'C++' : ''} ${
-    //   this.techC?.value ? 'C' : ''
-    // } ${this.techJava?.value ? 'Java' : ''}
-    // ${this.techPython?.value ? 'Python' : ''} ${
-    //   this.techJavascript?.value ? 'Javascript' : ''
-    // }`;
-    // console.log(Technology, '++');
-    // if (!(!this.techC?.value || !this.techCpp?.value || !this.techJava?.value || !this.techJavascript?.value || !this.techPython?.value)) {console.log(Technology, '--');
-    //   this.userServiceData.showAlert('error', 'ERROR :  Technology is Invalid');
-    //   return;
-    // }
-    // this.selectedOrderIds = this.registerForm.value.technology
-    // .map((checked: any, i: any) => checked ? this.technologies[i] : null)
-    // .filter((v:string) => v !== null);
     if (this.registerForm.invalid) {
       if (this.name?.invalid) {
         this.userServiceData.showAlert('error', 'ERROR :  Name is Invalid');
@@ -206,21 +146,6 @@ export class CreateComponent implements AfterViewInit {
         );
         return;
       }
-      // if (
-      //   !(
-      //     !this.techC?.value ||
-      //     !this.techCpp?.value ||
-      //     !this.techJava?.value ||
-      //     !this.techJavascript?.value ||
-      //     !this.techPython?.value
-      //   )
-      // ) {
-      //   this.userServiceData.showAlert(
-      //     'error',
-      //     'ERROR :  Technology is Invalid'
-      //   );
-      //   return;
-      // }
       if (this.technologiesForm?.invalid) {
         this.userServiceData.showAlert(
           'error',
@@ -251,13 +176,7 @@ export class CreateComponent implements AfterViewInit {
           mobileNumber: this.mobileNumber?.value,
           gender: this.gender?.value,
           category: this.category?.value,
-          //     Technology: `${this.techCpp?.value ? 'C++' : ''} ${
-          //       this.techC?.value ? 'C' : ''
-          //     } ${this.techJava?.value ? 'Java' : ''}
-          // ${this.techPython?.value ? 'Python' : ''} ${
-          //       this.techJavascript?.value ? 'Javascript' : ''
-          //     }`,
-         technology: this.technologiesForm.value,
+          technology: this.technologiesForm.value,
           profilePicture: this.imageBase64,
         });
 

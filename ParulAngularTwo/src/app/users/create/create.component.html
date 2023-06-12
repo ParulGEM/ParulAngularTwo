@@ -273,115 +273,12 @@
                               (change)="onTechChange($event, 'JavaScript')" value="Javascript" name="box">
                             <label class="form-check-label" for="f3">Javascript</label>
                             </div>
-                          <!-- </div>
-                           <span *ngIf="technologiesForm.touched && !technologiesForm.length"
-                            class="text-danger">
-                            Please tick applicable technologies</span>
-                        </div> -->
 
-                        <!-- <strong><label>Technologies:</label></strong>
-                        <div
-                          formArrayName="technology"
-                          *ngFor="let tech of getControls(); let i = index"
-                        >
-                          <label>
-                            <input type="checkbox" [formControlName]="i" />
-                            {{ technologies[i] }}
-                          </label>
-                        </div> -->
                       </div>
                     </div>
                   </div>
                   </div>
-                  <!-- <div class="row">
-                    <div class="col-12 col-md-12 mb-4">
-                      <div class="form-outline">
-                        <label
-                          aria-label="Sizing example input"
-                          aria-describedby="inputGroup-sizing-default"
-                          class="form-label"
-                          >Technology :</label
-                        >
 
-                        <div class="form-check bg-white text-black">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            value="C"
-                            id="flexCheckDefault"
-                            formControlName="tech.c"
-                          />
-                          <label
-                            class="form-check-label"
-                            for="flexCheckDefault"
-                          >
-                            C</label
-                          >
-                        </div>
-
-                        <div class="form-check bg-white text-black">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            value="Cpp"
-                            id="flexCheckDefault"
-                            formControlName="tech.cpp"
-                          />
-                          <label
-                            class="form-check-label"
-                            for="flexCheckDefault"
-                          >
-                            C++
-                          </label>
-                        </div>
-                        <div class="form-check bg-white text-black">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            value="Java"
-                            id="flexCheckDefault"
-                            formControlName="tech.java"
-                          />
-                          <label
-                            class="form-check-label"
-                            for="flexCheckDefault"
-                          >
-                            Java
-                          </label>
-                        </div>
-                        <div class="form-check bg-white text-black">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            value="Python"
-                            id="flexCheckDefault"
-                            formControlName="tech.python"
-                          />
-                          <label
-                            class="form-check-label"
-                            for="flexCheckDefault"
-                          >
-                            Python
-                          </label>
-                        </div>
-                        <div class="form-check bg-white text-black">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            value="Javascript"
-                            id="flexCheckDefault"
-                            formControlName="tech.javascript"
-                          />
-                          <label
-                            class="form-check-label"
-                            for="flexCheckDefault"
-                          >
-                            Javascript
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div> -->
                   <div>
                     <label class="form-label" for="customFile"></label>
                     <input
@@ -515,11 +412,7 @@
                         </div>
 
                         <div>
-                          <!-- Technology: {{ techCpp?.value ? "C++" : "" }}
-                          {{ techC?.value ? "C" : "" }}
-                          {{ techJava?.value ? "Java" : "" }}
-                          {{ techPython?.value ? "Python" : "" }}
-                          {{ techJavascript?.value ? "Javascript" : "" }} -->
+                         
                           Technology : {{ technologiesForm?.value }}
                           <span
                             [ngStyle]="{ color: 'red' }"
