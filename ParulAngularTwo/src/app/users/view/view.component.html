@@ -1,0 +1,40 @@
+<div class="container">
+  <h1 class="text-center m-2">User Table</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>SN</th>
+        <th>Profile</th>
+        <th>Name</th>
+        <th>Mail</th>
+        <th>Mobile Number</th>
+        <th>Gender</th>
+        <th>Category</th>
+        <th>Technology</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let user of userServiceData">
+        <td><strong>{{ user.sn }}</strong></td>
+        <td>
+          <img class="rounded-circle border border-dark myimage" [src]="user.profilePicture" alt="Profile Image" width="50" />
+        </td>
+
+        <td><strong>{{ user.name }}</strong></td>
+        <td><strong>{{ user.mail }}</strong></td>
+        <td><strong>{{ user.mobileNumber }} </strong></td>
+        <td><strong>{{ user.gender }}</strong></td>
+        <td><strong>{{ user.category }} </strong></td>
+
+        <td><strong>
+          <ul>
+
+            <li *ngFor="let tech of user.Technology">{{ tech }}</li>
+
+          </ul>
+          </strong></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

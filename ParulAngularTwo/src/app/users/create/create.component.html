@@ -1,0 +1,570 @@
+<div
+  class="bg-image-vertical h-100"
+  style="
+    background-color: #efd3e4;
+    background-image: url(https://mdbootstrap.com/img/Photos/new-templates/search-box/img1.jpg);
+  "
+>
+  <div class="mask d-flex align-items-center h-100">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+          <div class="card" style="border-radius: 1rem">
+            <div class="card-body p-5">
+              <h2 class="mb-5 text-center">User Form</h2>
+              <div>
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                  <div class="row">
+                    <div class="col-12 col-md-12 mb-4">
+                      <div class="form-outline">
+                        <label
+                          for="exampleInputName"
+                          aria-label="Sizing example input"
+                          aria-describedby="inputGroup-sizing-default"
+                          class="form-label"
+                          >Name :
+                        </label>
+                        <div class="input-group mb-3">
+                          <input
+                            id="exampleInputName"
+                            type="text"
+                            class="form-control"
+                            aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default"
+                            name="name"
+                            formControlName="name"
+                          />
+                          <div>
+                            <div
+                              *ngIf="
+                                registerForm.controls.name &&
+                                registerForm.controls.name.invalid &&
+                                registerForm.controls.name.touched
+                              "
+                            >
+                              <div
+                                class="toast"
+                                role="alert"
+                                aria-live="assertive"
+                                aria-atomic="true"
+                              >
+                                <div class="toast-header">
+                                  <img
+                                    src="..."
+                                    class="rounded me-2"
+                                    alt="..."
+                                  />
+                                  <strong class="me-auto">ERROR</strong>
+
+                                  <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="toast"
+                                    aria-label="Close"
+                                  ></button>
+                                </div>
+                                <div class="toast-body">Not a valid</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-md-12 mb-4">
+                      <div class="form-outline">
+                        <label
+                          for="exampleInputGender"
+                          aria-label="Sizing example input"
+                          aria-describedby="inputGroup-sizing-default"
+                          class="form-label"
+                          >Gender :
+                        </label>
+                        <div class="input-group mb-3">
+                          <div class="form-check bg-white text-black">
+                            <input
+                              id="exampleInputGender"
+                              class="form-check-input"
+                              type="radio"
+                              name="gender"
+                              formControlName="gender"
+                              value="male"
+                            />
+                            <label
+                              class="form-check-label"
+                              for="flexRadioDefault1"
+                            >
+                              Male
+                            </label>
+                          </div>
+                          <div class="form-check bg-white text-black mx-2">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="gender"
+                              id="flexRadioDefault2"
+                              formControlName="gender"
+                              value="female"
+                            />
+                            <label
+                              class="form-check-label"
+                              for="flexRadioDefault2"
+                            >
+                              Female
+                            </label>
+                            <div>
+                              <span
+                                [ngStyle]="{ color: 'red' }"
+                                *ngIf="
+                                  registerForm.controls.gender &&
+                                  registerForm.controls.gender.invalid &&
+                                  registerForm.controls.gender.touched
+                                "
+                                >Not valid field</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-md-12 mb-4">
+                      <div class="form-outline">
+                        <div class="mb-3">
+                          <label
+                            for="exampleInputEmail1"
+                            aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default"
+                            class="form-label"
+                            >Email address</label
+                          >
+                          <div class="input-group mb-3">
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="exampleInputEmail1"
+                              aria-describedby="emailHelp"
+                              formControlName="mail"
+                              name="mail"
+                            />
+                            <div>
+                              <span
+                                [ngStyle]="{ color: 'red' }"
+                                *ngIf="
+                                  registerForm.controls.mail &&
+                                  registerForm.controls.mail.invalid &&
+                                  registerForm.controls.mail.touched
+                                "
+                                >Not valid field</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-md-12 mb-4">
+                      <div class="form-outline">
+                        <label
+                          for="exampleInputphone"
+                          aria-label="Sizing example input"
+                          aria-describedby="inputGroup-sizing-default"
+                          class="form-label"
+                          >PhoneNumber :</label
+                        >
+                        <div class="input-group mb-3">
+                          <input
+                            type="text"
+                            id="exampleInputphone"
+                            class="form-control"
+                            aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default"
+                            formControlName="mobileNumber"
+                            name="mobileNumber"
+                          />
+                          <div>
+                            <span
+                              [ngStyle]="{ color: 'red' }"
+                              *ngIf="
+                                registerForm.controls.mobileNumber &&
+                                registerForm.controls.mobileNumber.invalid &&
+                                registerForm.controls.mobileNumber.touched
+                              "
+                              >Not valid field</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-md-12 mb-4">
+                      <div class="form-outline">
+                        <label
+                          aria-label="Sizing example input"
+                          aria-describedby="inputGroup-sizing-default"
+                          class="form-label"
+                          >Category :</label
+                        >
+                        <div class="input-group mb-3">
+                          <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            formControlName="category"
+                          >
+                            <option value="General">General</option>
+                            <option value="ST/SC">SC/ST</option>
+                            <option value="OBC">OBC</option>
+                          </select>
+                          <div>
+                            <span
+                              [ngStyle]="{ color: 'red' }"
+                              *ngIf="
+                                registerForm.controls.category &&
+                                registerForm.controls.category.invalid &&
+                                registerForm.controls.category.touched
+                              "
+                              >Not valid field</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-md-12 mb-4">
+                      <div class="form-outline">
+                        <div class="selectTechnology">
+                          <label for="inputtechnology">Technology<b class="text-danger">*</b></label>
+
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault"
+                              [checked]="technologiesForm.value.includes('C')" (change)="onTechChange($event, 'C') " name="box">
+                            <label class="form-check-label" for="flexCheckDefault">C</label>
+                          </div>
+
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="f4"
+                              [checked]="technologiesForm.value.includes('C++')" (change)="onTechChange($event, 'C++')" name="box"
+                              value="C++">
+                            <label class="form-check-label" for="f4">C++</label>
+                          </div>
+
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="f1"
+                              [checked]="technologiesForm.value.includes('Java')" (change)="onTechChange($event, 'Java')"
+                              value="Java" name="box">
+                            <label class="form-check-label" for="f1">Java</label>
+                          </div>
+
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="f2"
+                              [checked]="technologiesForm.value.includes('Python')" (change)="onTechChange($event, 'Python')"
+                              value="Python" name="box">
+                            <label class="form-check-label" for="f2">Python</label>
+                          </div>
+
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="f3"
+                              [checked]="technologiesForm.value.includes('JavaScript')"
+                              (change)="onTechChange($event, 'JavaScript')" value="Javascript" name="box">
+                            <label class="form-check-label" for="f3">Javascript</label>
+                            </div>
+                          <!-- </div>
+                           <span *ngIf="technologiesForm.touched && !technologiesForm.length"
+                            class="text-danger">
+                            Please tick applicable technologies</span>
+                        </div> -->
+
+                        <!-- <strong><label>Technologies:</label></strong>
+                        <div
+                          formArrayName="technology"
+                          *ngFor="let tech of getControls(); let i = index"
+                        >
+                          <label>
+                            <input type="checkbox" [formControlName]="i" />
+                            {{ technologies[i] }}
+                          </label>
+                        </div> -->
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                  <!-- <div class="row">
+                    <div class="col-12 col-md-12 mb-4">
+                      <div class="form-outline">
+                        <label
+                          aria-label="Sizing example input"
+                          aria-describedby="inputGroup-sizing-default"
+                          class="form-label"
+                          >Technology :</label
+                        >
+
+                        <div class="form-check bg-white text-black">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value="C"
+                            id="flexCheckDefault"
+                            formControlName="tech.c"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexCheckDefault"
+                          >
+                            C</label
+                          >
+                        </div>
+
+                        <div class="form-check bg-white text-black">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value="Cpp"
+                            id="flexCheckDefault"
+                            formControlName="tech.cpp"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexCheckDefault"
+                          >
+                            C++
+                          </label>
+                        </div>
+                        <div class="form-check bg-white text-black">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value="Java"
+                            id="flexCheckDefault"
+                            formControlName="tech.java"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexCheckDefault"
+                          >
+                            Java
+                          </label>
+                        </div>
+                        <div class="form-check bg-white text-black">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value="Python"
+                            id="flexCheckDefault"
+                            formControlName="tech.python"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexCheckDefault"
+                          >
+                            Python
+                          </label>
+                        </div>
+                        <div class="form-check bg-white text-black">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value="Javascript"
+                            id="flexCheckDefault"
+                            formControlName="tech.javascript"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexCheckDefault"
+                          >
+                            Javascript
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+                  <div>
+                    <label class="form-label" for="customFile"></label>
+                    <input
+                      type="file"
+                      class="form-control"
+                      formControlName="profilePicture"
+                      id="customFile"
+                      (change)="onFileSelected($event)"
+                    />
+                    <div>
+                      <span
+                        [ngStyle]="{ color: 'red' }"
+                        *ngIf="
+                          profilePicture &&
+                          profilePicture.invalid &&
+                          profilePicture.touched
+                        "
+                        >Profile is Mandatory</span
+                      >
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="btn btn-success mt-2 visually-hidden"
+                    #previewbtn
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                  >
+                    Preview
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    (click)="preview($event)"
+                  >
+                    Preview
+                  </button>
+                </form>
+                <div
+                  class="modal fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                          Form Preview
+                          <span
+                            [ngStyle]="{ color: 'red' }"
+                            *ngIf="registerForm.invalid; else ifboxvalid"
+                            >Invalid</span
+                          >
+                          <ng-template #ifboxvalid>
+                            <span [ngStyle]="{ color: 'green' }"> Valid</span>
+                          </ng-template>
+                        </h1>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+
+                      <div class="modal-body">
+                        <div>
+                          Name : {{ name?.value }}
+                          <span
+                            [ngStyle]="{ color: 'red' }"
+                            *ngIf="
+                              registerForm.controls.name &&
+                              registerForm.controls.name.invalid &&
+                              registerForm.controls.name.touched
+                            "
+                            >Not valid field</span
+                          >
+                        </div>
+                        <div>
+                          Gender: {{ gender?.value
+                          }}<span
+                            [ngStyle]="{ color: 'red' }"
+                            *ngIf="
+                              registerForm.controls.gender &&
+                              registerForm.controls.gender.invalid &&
+                              registerForm.controls.gender.touched
+                            "
+                            >Not valid field</span
+                          >
+                        </div>
+                        <div>
+                          Email: {{ mail?.value }}
+                          <span
+                            [ngStyle]="{ color: 'red' }"
+                            *ngIf="
+                              registerForm.controls.mail &&
+                              registerForm.controls.mail.invalid &&
+                              registerForm.controls.mail.touched
+                            "
+                            >Not valid field</span
+                          >
+                        </div>
+
+                        <div>
+                          Mobile: {{ mobileNumber?.value }}
+                          <span
+                            [ngStyle]="{ color: 'red' }"
+                            *ngIf="
+                              registerForm.controls.mobileNumber &&
+                              registerForm.controls.mobileNumber.invalid &&
+                              registerForm.controls.mobileNumber.touched
+                            "
+                            >Not valid field</span
+                          >
+                        </div>
+
+                        <div>
+                          Category: {{ category?.value }}
+                          <span
+                            [ngStyle]="{ color: 'red' }"
+                            *ngIf="
+                              registerForm.controls.category &&
+                              registerForm.controls.category.invalid &&
+                              registerForm.controls.category.touched
+                            "
+                            >Not valid field</span
+                          >
+                        </div>
+
+                        <div>
+                          <!-- Technology: {{ techCpp?.value ? "C++" : "" }}
+                          {{ techC?.value ? "C" : "" }}
+                          {{ techJava?.value ? "Java" : "" }}
+                          {{ techPython?.value ? "Python" : "" }}
+                          {{ techJavascript?.value ? "Javascript" : "" }} -->
+                          Technology : {{ technologiesForm?.value }}
+                          <span
+                            [ngStyle]="{ color: 'red' }"
+                            *ngIf="technologiesForm && technologiesForm.invalid && technologiesForm.touched"
+                            >Tech is Mandatory</span
+                          >
+                        </div>
+                        <div>
+                          Profile : {{ fileName }}
+                          <span
+                            [ngStyle]="{ color: 'red' }"
+                            *ngIf="
+                              profilePicture &&
+                              profilePicture.invalid &&
+                              profilePicture.touched
+                            "
+                            >Profile is Mandatory</span
+                          >
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          #closeModalbtn
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Cancle
+                        </button>
+                        <button
+                          type="submit"
+                          (click)="onSubmit()"
+                          class="btn btn-primary"
+                        >
+                          Save
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

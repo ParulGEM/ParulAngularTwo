@@ -1,0 +1,6 @@
+.myclass {
+  z-index: 999;
+  width: 200px;
+  border: 2px solid grey;
+  border-radius: 4px;
+}

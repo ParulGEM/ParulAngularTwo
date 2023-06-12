@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<div
+  *ngIf="userServiceData.successalert"
+  class="alert alert-success alert-info position-fixed top-0 end-0 w-40 rounded me-2 myclass"
+  role="alert"
+>
+  {{ userServiceData.message }}
+</div>
+<div
+  *ngIf="userServiceData.errralert"
+  class="alert alert-warning rounded me-2 alert-info position-fixed top-0 end-0 w-40 rounded me-2 myclass"
+  role="alert"
+>
+  {{ userServiceData.message }}
+</div>
+
+<router-outlet></router-outlet>
