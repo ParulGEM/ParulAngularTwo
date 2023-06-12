@@ -29,12 +29,13 @@
 
         <td><strong>
           <ul>
-
-            <li *ngFor="let tech of user.Technology">{{ tech }}</li>
+            {{user.Technology[0]}}
+            <!-- <li *ngFor="let tech of user.Technology">{{ tech }}</li> -->
 
           </ul>
           </strong></td>
       </tr>
     </tbody>
   </table>
+
 </div>

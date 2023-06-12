@@ -32,5 +32,6 @@ export class ViewComponent implements AfterViewInit {
   ) {
     this.spinner.show();
     this.userServiceData = userdata.user;
+    
   }
 }

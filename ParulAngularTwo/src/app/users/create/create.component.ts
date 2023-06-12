@@ -176,7 +176,7 @@ export class CreateComponent implements AfterViewInit {
           mobileNumber: this.mobileNumber?.value,
           gender: this.gender?.value,
           category: this.category?.value,
-          technology: this.technologiesForm.value,
+          Technology: this.technologiesForm.value,
           profilePicture: this.imageBase64,
         });
 
